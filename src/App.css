@@ -1,0 +1,134 @@
+.selected-genre {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+.selected-genre strong {
+  color: #007bff; /* Blue color for "Selected Genre:" label */
+}
+
+.search-bar {
+  position: relative;
+  width: 80%;
+  margin: 50px auto;
+}
+
+.genre-dropdown {
+  margin-bottom: 10px;
+}
+
+.genre-dropdown select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ensures responsive columns */
+  gap: 20px; /* 20px space between items */
+  margin-top: 20px;
+  width: 100%; /* Ensure the container spans the full width */
+}
+
+.movie-card {
+  width: 100%; /* Ensure the card spans the full width of its grid cell */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #f9f9f9;
+ 
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease; /* Smooth transform transition for rotation */
+}
+
+.movie-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.movie-card p {
+  font-size: 14px;
+  color:rgb(72, 10, 243);
+}
+
+.movie-card:hover img {
+  transform: rotate(10deg); /* Rotate image slightly when hovered */
+}
+
+.movie-card:hover {
+  transform: scale(1.05); /* Slight zoom effect for the card itself */
+}
+
+.show-more-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.show-more-link:hover {
+  color: #0056b3;
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style for the h1 tag */
+h1 {
+  font-size: 3rem;
+  color: #4A90E2; /* Deep blue color for emphasis */
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  position: relative;
+  transition: transform 0.6s ease-in-out, font-size 0.4s ease;
+}
+
+/* Style for the p tag */
+p {
+  font-size: 1.2rem;
+
+  margin-top: 10px;
+  line-height: 1.7;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.9;
+  transition: transform 0.6s ease-in-out, font-size 0.4s ease;
+}
+
+/* Hover Effect: Zoom and Rotate 360 */
+h1:hover,
+p:hover {
+  transform: scale(1.2) rotate(360deg); /* Zoom and rotate 360 */
+  cursor: pointer; /* Change cursor to pointer to indicate it's interactive */
+}
+
+/* Optional: Adding a little bounce effect */
+/* h1:hover {
+  animation: bounce 1s infinite;
+} */
+
