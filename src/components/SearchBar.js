@@ -12,7 +12,7 @@ function SearchBar({ onGenreChange, onYearChange, genres }) {
 
   return (
     <div className="search-bar">
-      {/* Genre Dropdown */}
+     
       <div className="dropdown">
         <h3>Select Genre</h3>
         <select onChange={(e) => onGenreChange(e.target.value)} defaultValue="">
@@ -25,8 +25,8 @@ function SearchBar({ onGenreChange, onYearChange, genres }) {
         </select>
       </div>
 
-      {/* Year Dropdown */}
-      <div className="dropdown">
+     
+      <div className="dropdown"> 
         <h3>Select Year</h3>
         <select onChange={(e) => onYearChange(e.target.value)} defaultValue="">
           <option value="">Select a Year</option>

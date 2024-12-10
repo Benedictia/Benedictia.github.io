@@ -4,7 +4,7 @@ import axios from 'axios';
 
 function MovieCard({ movie }) {
   const [showModal, setShowModal] = useState(false);
-  const [runtime, setRuntime] = useState('N/A'); // State for runtime
+  const [runtime, setRuntime] = useState('N/A'); 
 
   const openModal = () => {
     setShowModal(true);
@@ -23,12 +23,12 @@ function MovieCard({ movie }) {
           `https://api.themoviedb.org/3/movie/${movie?.id}`,
           {
             params: {
-              api_key: 'cc62be236579cfab00f1cc20d9f95287', // Replace with your valid API Key
+              api_key: 'cc62be236579cfab00f1cc20d9f95287', 
             },
           }
         );
 
-        console.log('Full response from TMDB API:', response?.data); // Log full response to debug
+        // console.log('Full response from TMDB API:', response?.data); // Log full response to debug
         setRuntime(response?.data?.runtime ? `${response.data.runtime} min` : 'N/A');
       } catch (error) {
         console.error('Error fetching movie details:', error);
@@ -43,7 +43,7 @@ function MovieCard({ movie }) {
   }, [movie?.id]);
 
   useEffect(() => {
-    console.log('Movie overview:', movie?.overview); // Debugging log
+    // console.log('Movie overview:', movie?.overview); // Debugging log
   }, [movie?.overview]);
 
   return (
@@ -57,27 +57,26 @@ function MovieCard({ movie }) {
         className="movie-poster"
       />
 
-      {/* Movie Information Section */}
       <div className="movie-details">
-        {/* Title */}
+        
         <h3>{movie?.title || 'Unknown Title'}</h3>
 
-        {/* Release Date */}
+        
         <p><strong>Release Date:</strong> {movie?.release_date || 'N/A'}</p>
 
-        {/* Rating */}
+     
         <p><strong>Rating:</strong> {movie?.vote_average || 'N/A'}</p>
 
-        {/* Runtime */}
+      
         <p><strong>Duration:</strong> {runtime}</p>
 
-        {/* Modal Trigger Button */}
+
         <button className="toggle-btn" onClick={openModal}>
           More
         </button>
       </div>
 
-      {/* Modal Popup */}
+     
       {showModal && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>

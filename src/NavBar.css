@@ -1,0 +1,40 @@
+.navbar {
+    background-color: plum; 
+    padding: 10px 20px; 
+    display: flex; 
+    justify-content: center; 
+    
+  }
+  
+
+  
+  .nav-links a:hover {
+    color: white; 
+    background-color: black; 
+    border-radius: 5px; 
+    
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 5px;
+    text-decoration: none;
+   
+  }
+  li a:hover {
+    background-color: blueviolet;
+  }

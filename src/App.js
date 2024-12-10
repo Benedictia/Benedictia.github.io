@@ -1,8 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import MovieCard from './components/MovieCard';
 import SearchBar from './components/SearchBar';
+import NavBar from './components/NavBar'; 
+import SignUpForm from "./pages/SignUpForm";
+import HomePage from "./pages/HomePage"; 
+
 import './index.css'
 
 // Define TMDB API base URL and API Key
@@ -71,46 +76,65 @@ function App() {
     fetchMovies();
   }, [selectedGenre, selectedYear, currentPage]);
 
+  
   return (
-    <div>
-     <h1 className="fancy-title">🎬 Welcome to Movie World! 🎬</h1>
-     <p className="welcome-message">Your gateway to the world of movies. Explore, discover, and enjoy!</p>
-      <SearchBar
-        genres={genres}
-        onGenreChange={(genre) => {
-          setSelectedGenre(genre);
-          setCurrentPage(1);
-        }}
-        onYearChange={(year) => {
-          setSelectedYear(year);
-          setCurrentPage(1);
-        }}
-      />
+   
+      <div className="App">
+        {/* Navigation Bar */}
+        <NavBar />
+        
+        {/* Welcome Section */}
+        <h1 className="fancy-title">🎬 Welcome to Movie World! 🎬</h1>
+        <p className="welcome-message">Your gateway to the world of movies. Explore, discover, and enjoy!</p>
 
-      <div className="search-results-container">
-        {movies.length > 0 ? (
-          movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)
-        ) : (
-          <p>No movies found. Try selecting different filters.</p>
-        )}
-      </div>
+        {/* Define Routes */}
+        <Routes>
+          {/* Home Page Route */}
+          <Route exact path="/" element={<HomePage />} />
+          
+          {/* Sign-Up Page Route */}
+          <Route path="/signup" element={<SignUpForm />} />
+        </Routes>
 
-      {/* Pagination Controls */}
-      <div className="pagination-container">
-        <button onClick={handlePrevPage} disabled={currentPage <= 1}>
-          Previous
-        </button>
-        <span>
-          Page {currentPage} of {Math.ceil(totalMovies / 10)}
-        </span>
-        <button
-          onClick={handleNextPage}
-          disabled={currentPage >= Math.ceil(totalMovies / 10)}
-        >
-          Next
-        </button>
+        {/* Search Bar Component */}
+        <SearchBar
+          genres={genres}
+          onGenreChange={(genre) => {
+            setSelectedGenre(genre);
+            setCurrentPage(1);
+          }}
+          onYearChange={(year) => {
+            setSelectedYear(year);
+            setCurrentPage(1);
+          }}
+        />
+
+        {/* Display Search Results (Movies List) */}
+        <div className="search-results-container">
+          {movies.length > 0 ? (
+            movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)
+          ) : (
+            <p>No movies found. Try selecting different filters.</p>
+          )}
+        </div>
+
+        {/* Pagination Controls */}
+        <div className="pagination-container">
+          <button onClick={handlePrevPage} disabled={currentPage <= 1}>
+            Previous
+          </button>
+          <span>
+            Page {currentPage} of {Math.ceil(totalMovies / 10)}
+          </span>
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage >= Math.ceil(totalMovies / 10)}
+          >
+            Next
+          </button>
+        </div>
       </div>
-    </div>
+    
   );
 }
 
