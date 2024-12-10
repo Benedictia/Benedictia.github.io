@@ -7,3 +7,4 @@ Sign up to get updates on new release.
 View detailed information about each movie including runtime, rating, release date, and overview.
 Modal popup to view additional details of each movie.
 The app will open in your browser at http://localhost:3000.
+The link to the Movie-Discovery-App: https://benedictia-github-io.onrender.com
