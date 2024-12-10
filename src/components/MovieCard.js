@@ -15,7 +15,7 @@ function MovieCard({ movie }) {
     setShowModal(false);
   };
 
-  // Fetch movie details from API when movie ID is available
+  // function to Fetch movie details from API when movie ID is available
   useEffect(() => {
     if (movie?.id) {
       console.log('Fetching movie details for ID:', movie.id); 
