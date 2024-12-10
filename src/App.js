@@ -10,7 +10,7 @@ import HomePage from "./pages/HomePage";
 
 import './index.css'
 
-// Define TMDB API base URL and API Key
+
 const API_KEY = 'cc62be236579cfab00f1cc20d9f95287';
 const TMDB_BASE_URL = 'https://api.themoviedb.org/3/discover/movie';
 
@@ -40,7 +40,7 @@ function App() {
     try {
       const response = await axios.get(TMDB_BASE_URL, {
         params: {
-          api_key: API_KEY,
+          api_key: 'cc62be236579cfab00f1cc20d9f95287',
           sort_by: 'popularity.desc',
           ...(selectedGenre && { with_genres: selectedGenre }),
           ...(selectedYear && { primary_release_date_gte: `${selectedYear}-01-01`, primary_release_date_lte: `${selectedYear}-12-31` }),
