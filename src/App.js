@@ -80,23 +80,23 @@ function App() {
   return (
    
       <div className="App">
-        {/* Navigation Bar */}
+       
         <NavBar />
         
-        {/* Welcome Section */}
+       
         <h1 className="fancy-title">🎬 Welcome to Movie World! 🎬</h1>
         <p className="welcome-message">Your gateway to the world of movies. Explore, discover, and enjoy!</p>
 
-        {/* Define Routes */}
+        
         <Routes>
-          {/* Home Page Route */}
+         
           <Route exact path="/" element={<HomePage />} />
           
-          {/* Sign-Up Page Route */}
+        
           <Route path="/signup" element={<SignUpForm />} />
         </Routes>
 
-        {/* Search Bar Component */}
+        
         <SearchBar
           genres={genres}
           onGenreChange={(genre) => {
@@ -109,7 +109,7 @@ function App() {
           }}
         />
 
-        {/* Display Search Results (Movies List) */}
+        {/* Display Search Result of the Movies List */}
         <div className="search-results-container">
           {movies.length > 0 ? (
             movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)
@@ -118,7 +118,7 @@ function App() {
           )}
         </div>
 
-        {/* Pagination Controls */}
+        {/* Pagination */}
         <div className="pagination-container">
           <button onClick={handlePrevPage} disabled={currentPage <= 1}>
             Previous

@@ -7,10 +7,10 @@ function NavBar() {
     <nav className="navbar">
       <ul>
         <li>
-          <Link to="/">Home</Link> {/* Link to the HomePage */}
+          <Link to="/">Home</Link> 
         </li>
         <li>
-          <Link to="/signup">Latest Release</Link> {/* Link to the SignUpForm */}
+          <Link to="/signup">Latest Release</Link> 
         </li>
       </ul>
     </nav>
